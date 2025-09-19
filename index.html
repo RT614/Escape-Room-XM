@@ -31,7 +31,7 @@
             <h2>Leaderboard</h2>
             <table>
                 <thead>
-                    <tr><th>Name</th><th>Correct</th><th>Time</th><th>Timestamp</th></tr>
+                    <tr><th>Name</th><th>Correct</th><th>Time</th><th>Timestamp</th><th>GameTitle</th></tr>
                 </thead>
                 <tbody id="leaderboardBody"></tbody>
             </table>
@@ -117,7 +117,7 @@ if (selected.value === correctAnswer) {
             const timeTaken = new Date(endTime - startTime).toISOString().substr(11, 8);
             const timestamp = endTime.toLocaleString();
             const name = document.getElementById("playerName").value;
-            const gameTitle = document.querySelector("h1").innerText; // Capture game title from 
+            const gameTitle = document.querySelector("h1").innerText;
             const entry = { name, correct, timeTaken, timestamp, gameTitle };
             let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
             leaderboard.push(entry);
@@ -148,5 +148,6 @@ if (selected.value === correctAnswer) {
     </script>
 </body>
 </html>
+
 
 
