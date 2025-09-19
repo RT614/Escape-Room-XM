@@ -118,7 +118,7 @@ if (selected.value === correctAnswer) {
             const timestamp = endTime.toLocaleString();
             const name = document.getElementById("playerName").value;
             const gameTitle = document.querySelector("h1").innerText; // Capture game title from 
-            const entry = { name, correct, timeTaken, timestamp };
+            const entry = { name, correct, timeTaken, timestamp, gameTitle };
             let leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
             leaderboard.push(entry);
             localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
@@ -148,4 +148,5 @@ if (selected.value === correctAnswer) {
     </script>
 </body>
 </html>
+
 
